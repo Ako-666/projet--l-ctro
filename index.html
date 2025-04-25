@@ -1,0 +1,67 @@
+<!DOCTYPE html>  
+<html lang="fr">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Calculateur de Potentiel Électrostatique</title>  
+    <link rel="stylesheet" href="styles.css"> <!-- Linking to the CSS file -->  
+</head>  
+<body>  
+    <header>  
+        <h1>Calculateur de Potentiel Électrostatique</h1>  
+        <p>Choisissez une option pour commencer.</p>  
+        <nav id="nav-bar" class="hidden">  
+            <button onclick="showSection('single-charge')">Charge Ponctuelle</button>  
+            <button onclick="showSection('multiple-charges')">Charges Multiples</button>  
+            <button onclick="showSection('continuous-distribution')">Distribution Continue</button>  
+        </nav>  
+    </header>   
+    <main>  
+        <section id="initial-choice">  
+            <h2>Bienvenue !</h2>  
+            <p>Veuillez choisir une catégorie pour commencer votre exploration :</p>  
+            <button onclick="revealNav()">Commencer</button>  
+        </section>  
+
+        <section id="single-charge" class="content hidden">  
+            <h2>Calcul pour une Charge Ponctuelle</h2>  
+            <p>Calculez le potentiel d'une charge ponctuelle.</p>  
+            <label for="charge">Charge \( q \) (C) :</label>  
+            <input type="number" id="charge" placeholder="Exemple : 1e-6">  
+            <label for="distance">Distance \( r \) (m) :</label>  
+            <input type="number" id="distance" placeholder="Exemple : 0.1">  
+            <button onclick="calculateSingleCharge()">Calculer</button>  
+            <div id="result-single"></div>  
+        </section>  
+
+        <section id="multiple-charges" class="content hidden">  
+            <h2>Calcul pour des Charges Multiples</h2>  
+            <p>Ajoutez plusieurs charges ponctuelles et leurs distances pour calculer le potentiel total.</p>  
+            <div id="charges-container"></div>  
+            <button onclick="addChargeInput()">Ajouter une Charge</button>  
+            <button onclick="calculateMultipleCharges()">Calculer</button>  
+            <div id="result-multiple"></div>  
+        </section>  
+
+        <section id="continuous-distribution" class="content hidden">  
+            <h2>Calcul pour une Distribution Continue</h2>  
+            <p>Saisissez les paramètres d’une distribution continue pour calculer le potentiel.</p>  
+            <label for="density">Densité de charge \( \lambda / \sigma / \rho \) :</label>  
+            <input type="number" id="density" placeholder="Exemple : 1e-6">  
+            <label for="distance-continuous">Distance \( r \) (m) :</label>  
+            <input type="number" id="distance-continuous" placeholder="Exemple : 0.1">  
+            <button onclick="calculateContinuousDistribution()">Calculer</button>  
+            <div id="result-continuous"></div>  
+        </section>  
+    </main>  
+    <footer>  
+        <div class="contact">  
+            <p><strong>Nom et Prénom :</strong> Younes Elhaij</p>  
+            <p><strong>Téléphone :</strong> 0712844463</p>  
+            <p><strong>Email :</strong> younesselhaij7@gmail.com</p>   
+        </div>  
+        <p>&copy; 2025 Tous droits réservés.</p>  
+    </footer>  
+    <script src="script.js"></script> <!-- Linking to the JavaScript file -->  
+</body>  
+</html>
